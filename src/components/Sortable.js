@@ -6,7 +6,9 @@ import Thankyou from "./Thankyou";
 
 class SortableClass extends Component {
   state = {
-    data: []
+    data: [],
+    submit: false,
+    finish: false
   };
 
   onDragOver = event => {
@@ -32,21 +34,42 @@ class SortableClass extends Component {
       });
   }
 
+  onSubmission = () => {
+    this.setState({ submit: true });
+    this.setState({ finish: true });
+    console.log(this.state.data);
+  };
+
   render() {
+    let teams = "";
+    let thankyou = "";
+    if (this.state.submit === false && this.state.finish === false) {
+      teams = (
+        <div>
+          <Sortable
+            idField={"_id"}
+            disabledField={"disabled"}
+            data={this.state.data}
+            itemUI={SortableItemUI}
+            onDragOver={this.onDragOver}
+            onNavigate={this.onNavigate}
+          />
+          <button
+            type="submit"
+            className="btn btn-primary"
+            onClick={this.onSubmission.bind(this)}
+          >
+            Submit
+          </button>
+        </div>
+      );
+    } else if (this.state.submit === true && this.state.finish === true) {
+      thankyou = <Thankyou />;
+    }
     return (
       <div className="container-fluid">
-        <Sortable
-          idField={"_id"}
-          disabledField={"disabled"}
-          data={this.state.data}
-          itemUI={SortableItemUI}
-          onDragOver={this.onDragOver}
-          onNavigate={this.onNavigate}
-        />
-        <button type="submit" className="btn btn-primary">
-          Submit
-        </button>
-        <Thankyou />
+        {teams}
+        {thankyou}
       </div>
     );
   }

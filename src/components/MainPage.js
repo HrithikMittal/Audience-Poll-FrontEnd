@@ -9,7 +9,7 @@ const MainPage = props => {
         <p className="card-text">
           With supporting text below as a natural lead-in to additional content.
         </p>
-        <button type="submit" className="btn btn-primary">
+        <button type="submit" onClick={props.click} className="btn btn-primary">
           Login
         </button>
       </div>
