@@ -15,14 +15,16 @@ class Login extends Component {
       regno: this.state.regno,
       password: this.state.password
     };
-    console.log("hey");
     axios
       .post("http://localhost:8080/user/signin", data)
       .then(response => {
         console.log(response);
-        this.setState({ token: response.token });
-        this.setState({ isSigned: true });
-        this.setState({ message: "You are successfully Login" });
+        this.setState({ token: response.data.token });
+        this.setState({ message: response.data.message });
+        if (response.data.message === undefined) {
+          this.setState({ isSigned: true });
+          this.props.click();
+        }
       })
       .catch(err => {
         console.log("Error message is ", err.message);
