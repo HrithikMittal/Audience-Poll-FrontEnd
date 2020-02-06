@@ -34,19 +34,26 @@ class SortableClass extends Component {
       });
   }
 
-  onSubmission = () => {
-    this.setState({ submit: true });
-    this.setState({ finish: true });
+  onSubmission = async () => {
     let response = this.state.data;
     let datatosend = [];
     response.map((eachres, index) => {
-      var teamname = eachres.name;
+      var teamname = eachres.name.toString();
       var obj = {};
-      obj[teamname] = index;
+      obj[teamname] = response.length - index;
       datatosend.push(obj);
       return null;
     });
-    axios.post("http://localhost:8080/team/postranking", { datatosend });
+    await axios
+      .post("http://localhost:8080/team/postranking", datatosend)
+      .then((req, res) => {
+        console.log({ message: "Done Successfully..." });
+        this.setState({ submit: true });
+        this.setState({ finish: true });
+      })
+      .catch(err => {
+        console.log("Error is ", err.message);
+      });
   };
 
   render() {
