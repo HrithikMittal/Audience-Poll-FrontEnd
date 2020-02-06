@@ -37,7 +37,16 @@ class SortableClass extends Component {
   onSubmission = () => {
     this.setState({ submit: true });
     this.setState({ finish: true });
-    console.log(this.state.data);
+    let response = this.state.data;
+    let datatosend = [];
+    response.map((eachres, index) => {
+      var teamname = eachres.name;
+      var obj = {};
+      obj[teamname] = index;
+      datatosend.push(obj);
+      return null;
+    });
+    axios.post("http://localhost:8080/team/postranking", { datatosend });
   };
 
   render() {
@@ -57,7 +66,7 @@ class SortableClass extends Component {
           <button
             type="submit"
             className="btn btn-primary"
-            onClick={this.onSubmission.bind(this)}
+            onClick={() => this.onSubmission()}
           >
             Submit
           </button>
