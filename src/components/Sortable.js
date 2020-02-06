@@ -1,8 +1,8 @@
 import React, { Component } from "react";
-import ReactDOM from "react-dom";
 import axios from "axios";
 import { Sortable } from "@progress/kendo-react-sortable";
 import SortableItemUI from "./style/SortableItemUI";
+import Thankyou from "./Thankyou";
 
 class SortableClass extends Component {
   state = {
@@ -43,6 +43,10 @@ class SortableClass extends Component {
           onDragOver={this.onDragOver}
           onNavigate={this.onNavigate}
         />
+        <button type="submit" className="btn btn-primary">
+          Submit
+        </button>
+        <Thankyou />
       </div>
     );
   }
