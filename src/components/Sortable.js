@@ -3,8 +3,9 @@ import axios from "axios";
 import { Sortable } from "@progress/kendo-react-sortable";
 import SortableItemUI from "./style/SortableItemUI";
 import Thankyou from "./Thankyou";
+import Image from "../assests/cheers.jpg";
 
-class SortableClass extends Component {
+class Sortableclass extends Component {
   state = {
     data: [],
     submit: false,
@@ -61,34 +62,59 @@ class SortableClass extends Component {
     let thankyou = "";
     if (this.state.submit === false && this.state.finish === false) {
       teams = (
-        <div>
-          <Sortable
-            idField={"_id"}
-            disabledField={"disabled"}
-            data={this.state.data}
-            itemUI={SortableItemUI}
-            onDragOver={this.onDragOver}
-            onNavigate={this.onNavigate}
-          />
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={() => this.onSubmission()}
+        <div className="container" style={{ padding: "10px 0px" }}>
+          <div
+            className="jumbotron jumbotron-fluid"
+            style={{ height: "200px" }}
           >
-            Submit
-          </button>
+            <div className="container">
+              <h1 className="display-4">Vote For VGT</h1>
+              <p className="lead">Drag Your Favourite team to the top.</p>
+            </div>
+          </div>
+          <div>
+            <Sortable
+              idField={"_id"}
+              disabledField={"disabled"}
+              data={this.state.data}
+              itemUI={SortableItemUI}
+              onDragOver={this.onDragOver}
+              onNavigate={this.onNavigate}
+            />
+            <button
+              style={{ margin: "10px 0px", width: "100%" }}
+              type="submit"
+              className="btn btn-primary"
+              onClick={() => this.onSubmission()}
+            >
+              Submit
+            </button>
+          </div>
         </div>
       );
     } else if (this.state.submit === true && this.state.finish === true) {
       thankyou = <Thankyou />;
     }
+
+    var sectionStyle = {
+      backgroundImage: `url(${Image})`,
+      height: "100%",
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      position: "fixed",
+      width: "100%",
+      backgroundRepeat: "repeat"
+    };
+
     return (
-      <div className="container-fluid">
-        {teams}
-        {thankyou}
+      <div style={sectionStyle}>
+        <div classNameName="container-fluid">
+          {teams}
+          {thankyou}
+        </div>
       </div>
     );
   }
 }
 
-export default SortableClass;
+export default Sortableclass;

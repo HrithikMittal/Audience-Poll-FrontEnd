@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
-import Login from "./components/Login";
 import MainPage from "./components/MainPage";
 import Sortable from "./components/Sortable";
+import Signup from "./components/Signup";
 
 class App extends Component {
   state = {
@@ -22,15 +22,17 @@ class App extends Component {
     let content = <MainPage click={() => this.onPressStart()} />;
     let data = null;
     if (this.state.start === true) {
-      content = <Login click={() => this.onLogin()} />;
+      content = <Signup click={() => this.onLogin()} />;
     }
     if (this.state.login === true) {
       data = <Sortable />;
     }
     return (
       <div>
-        {content}
-        {data}
+        {/* {content}
+        {data} */}
+        <Sortable />
+        {/* <Signup /> */}
       </div>
     );
   }
