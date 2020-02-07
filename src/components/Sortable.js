@@ -26,7 +26,7 @@ class Sortableclass extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:8080/team/getteams")
+      .get("https://mighty-plateau-37286.herokuapp.com/team/getteams")
       .then(teams => {
         this.setState({ data: teams.data });
       })
@@ -46,7 +46,10 @@ class Sortableclass extends Component {
       return null;
     });
     await axios
-      .post("http://localhost:8080/team/postranking", datatosend)
+      .post(
+        "https://mighty-plateau-37286.herokuapp.com/team/postranking",
+        datatosend
+      )
       .then((req, res) => {
         console.log({ message: "Done Successfully..." });
         this.setState({ submit: true });

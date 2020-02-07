@@ -63,7 +63,7 @@ export default function SignIn(props) {
       password: password
     };
     axios
-      .post("http://localhost:8080/user/signin", data)
+      .post("https://mighty-plateau-37286.herokuapp.com/user/signin", data)
       .then(response => {
         console.log(response);
         settoken(response.data.token);

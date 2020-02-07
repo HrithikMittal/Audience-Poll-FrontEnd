@@ -16,7 +16,7 @@ class Login extends Component {
       password: this.state.password
     };
     axios
-      .post("http://localhost:8080/user/signin", data)
+      .post("https://mighty-plateau-37286.herokuapp.com/user/signin", data)
       .then(response => {
         console.log(response);
         this.setState({ token: response.data.token });
