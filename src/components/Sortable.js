@@ -65,7 +65,11 @@ class Sortableclass extends Component {
         <div className="container" style={{ padding: "10px 0px" }}>
           <div
             className="jumbotron jumbotron-fluid"
-            style={{ height: "200px" }}
+            style={{
+              height: "200px",
+              borderRadius: "10px",
+              backgroundColor: "rgba(255,255,255,0.7)"
+            }}
           >
             <div className="container">
               <h1 className="display-4">Vote For VGT</h1>
@@ -84,7 +88,7 @@ class Sortableclass extends Component {
             <button
               style={{ margin: "10px 0px", width: "100%" }}
               type="submit"
-              className="btn btn-primary"
+              className="btn btn-warning"
               onClick={() => this.onSubmission()}
             >
               Submit

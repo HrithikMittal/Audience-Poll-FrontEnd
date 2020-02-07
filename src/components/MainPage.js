@@ -40,9 +40,9 @@ const MainPage = props => {
             </p>
             <button
               type="submit"
-              style={{ margin: "20%" }}
+              style={{ margin: "20% 0px", width: "60%" }}
               onClick={props.click}
-              className="btn btn-primary"
+              className="btn btn-info"
             >
               Login
             </button>

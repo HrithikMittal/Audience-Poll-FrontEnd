@@ -11,12 +11,17 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import axios from "axios";
+import Image from "../assests/pattern.png";
 
 function Copyright() {
   return (
-    <Typography variant="body2" color="textSecondary" align="center">
+    <Typography
+      variant="body2"
+      style={{ color: "black", fontSize: "20px" }}
+      align="center"
+    >
       {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
+      <Link color="inherit" href="http://www.siamvit.in/">
         SIAM - VIT
       </Link>{" "}
       {new Date().getFullYear()}
@@ -71,6 +76,16 @@ export default function SignIn(props) {
       .catch(err => {
         console.log("Error message is ", err.message);
       });
+  };
+
+  var sectionStyle = {
+    backgroundImage: `url(${Image})`,
+    height: "100%",
+    width: "100%",
+    alignItems: "center",
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    backgroundRepeat: "repeat"
   };
 
   const classes = useStyles();
@@ -136,7 +151,7 @@ export default function SignIn(props) {
   }
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Container style={sectionStyle} component="main" maxWidth="xs">
       {form}
     </Container>
   );

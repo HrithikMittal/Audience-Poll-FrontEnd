@@ -29,9 +29,8 @@ class App extends Component {
     }
     return (
       <div>
-        {/* {content}
-        {data} */}
-        <Sortable />
+        {content}
+        {data}
         {/* <Signup /> */}
       </div>
     );
