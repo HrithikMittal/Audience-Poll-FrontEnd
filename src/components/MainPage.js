@@ -7,6 +7,9 @@ const MainPage = props => {
       <video
         autoPlay
         loop
+        playsInline
+        autoBuffer
+        muted
         style={{
           position: "absolute",
           width: "100%",
@@ -40,7 +43,7 @@ const MainPage = props => {
             </p>
             <button
               type="submit"
-              style={{ margin: "20% 0px", width: "60%" }}
+              style={{ margin: "250px 0px", width: "60%" }}
               onClick={props.click}
               className="btn btn-info"
             >
