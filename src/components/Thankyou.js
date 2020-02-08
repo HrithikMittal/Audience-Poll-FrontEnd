@@ -5,7 +5,7 @@ const Thankyou = props => {
       <div
         className="jumbotron jumbotron-fluid"
         style={{
-          margin: "100px",
+          margin: "100px 50px",
           height: "200px",
           borderRadius: "10px",
           backgroundColor: "rgba(255,255,255,0.7)"
