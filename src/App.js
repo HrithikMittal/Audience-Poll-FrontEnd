@@ -12,6 +12,7 @@ class App extends Component {
 
   onPressStart = () => {
     this.setState({ start: true });
+    this.setState({ login: true });
   };
 
   onLogin = () => {
@@ -22,11 +23,12 @@ class App extends Component {
     let content = <MainPage click={() => this.onPressStart()} />;
     let data = null;
     if (this.state.start === true) {
-      content = <Signup click={() => this.onLogin()} />;
+      // content = <Signup click={() => this.onLogin()} />;
+      content = <Sortable />;
     }
-    if (this.state.login === true) {
-      data = <Sortable />;
-    }
+    // if (this.state.login === true) {
+    //   data = <Sortable />;
+    // }
     return (
       <div>
         {content}

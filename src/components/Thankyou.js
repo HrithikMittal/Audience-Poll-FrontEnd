@@ -13,7 +13,7 @@ const Thankyou = props => {
   };
 
   return (
-    <div class="container">
+    <div class="container" style={{ height: "500px" }}>
       <div
         className="jumbotron jumbotron-fluid"
         style={{

@@ -38,16 +38,14 @@ const MainPage = props => {
           </div>
           <div className="card-body" style={{ height: "80%" }}>
             <h1 className="card-title">Vit's Got Talent</h1>
-            <p className="card-text">
-              You have to Login Before sumitting your poll
-            </p>
+            <p className="card-text">Click the below button to start polling</p>
             <button
               type="submit"
               style={{ margin: "250px 0px", width: "60%" }}
               onClick={props.click}
               className="btn btn-info"
             >
-              Login
+              Poll
             </button>
           </div>
           <div
