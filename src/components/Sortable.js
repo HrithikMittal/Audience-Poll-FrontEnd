@@ -108,13 +108,16 @@ class Sortableclass extends Component {
       backgroundPosition: "center",
       backgroundSize: "cover",
       width: "100%",
+      height: "100%",
       backgroundRepeat: "repeat"
     };
 
     return (
-      <div style={sectionStyle}>
-        <div classNameName="container-fluid">
+      <div>
+        <div style={sectionStyle} classNameName="container-fluid">
           {teams}
+        </div>
+        <div style={sectionStyle} classNameName="container-fluid">
           {thankyou}
         </div>
       </div>

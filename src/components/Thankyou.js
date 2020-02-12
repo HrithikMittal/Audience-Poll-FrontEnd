@@ -1,12 +1,22 @@
 import React from "react";
+
+import Image from "../assests/cheers.jpg";
+
 const Thankyou = props => {
+  var sectionStyle = {
+    backgroundImage: `url(${Image})`,
+    backgroundPosition: "center",
+    backgroundSize: "cover",
+    width: "100%",
+    position: "fixed",
+    backgroundRepeat: "repeat"
+  };
+
   return (
     <div class="container">
       <div
         className="jumbotron jumbotron-fluid"
         style={{
-          margin: "100px",
-          height: "200px",
           borderRadius: "10px",
           backgroundColor: "rgba(255,255,255,0.7)"
         }}
