@@ -66,7 +66,7 @@ const MainPage = props => {
                 textAlign: "center"
               }}
             >
-              Made with love by Adhikansh Mittal
+              Made with love by SIAM VIT
             </h5>
           </div>
         </div>

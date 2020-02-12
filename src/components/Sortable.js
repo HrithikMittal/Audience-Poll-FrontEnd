@@ -105,10 +105,8 @@ class Sortableclass extends Component {
 
     var sectionStyle = {
       backgroundImage: `url(${Image})`,
-      height: "100%",
       backgroundPosition: "center",
       backgroundSize: "cover",
-      position: "fixed",
       width: "100%",
       backgroundRepeat: "repeat"
     };
